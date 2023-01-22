@@ -10,6 +10,19 @@ function CT_setup(){
       add_theme_support('title-tag');
       add_image_size('blog-index-thumbnail', 730,430);
       add_theme_support( 'post-thumbnails' );
+     
+      
+      //register sidebars
+    register_sidebar([
+      'name'          => 'Blog Sidebar',
+      'id'            => 'ct-blog-sidebar',    // ID should be LOWERCASE  ! ! !
+      'description'   => 'a sidebar for theme home page',
+      'class'         => '',
+      'before_widget' => '<div class="blog-widget mb-4">',
+      'after_widget'  => '</div>',
+      'before_title'  => ' <h6 class="mb-4">',
+      'after_title'   => '</h6>'
+  ]);
 
 }
 add_filter('show_admin_bar', '__return_false');

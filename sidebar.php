@@ -1,13 +1,16 @@
 <div class="col-lg-4">
+<?php if (is_active_sidebar('ct-blog-sidebar')) : ?>
+        <?php dynamic_sidebar('ct-blog-sidebar'); ?>
+    <?php endif; ?>
                 <div class="blog-widget mb-4">
-                    <form>
+                    <!-- <form>
                         <div class="form-group">
                             <div class="icon-field">
                                 <i class="vl-search"></i>
                                 <input type="text" name="s" class="form-control" placeholder="جستجو">
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
                 <div class="blog-widget mb-4">
                     <h6 class="mb-4">دسته بندی ها</h6>
