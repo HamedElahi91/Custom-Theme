@@ -6,5 +6,6 @@
             <?php get_template_part('tpls/blog/single-author');?>
       <?php endwhile; ?>
 <?php endif; ?>
+<?php comments_template(); ?>
 <?php get_template_part('tpls/blog/single-related-post');?>
 <?php get_footer();?>

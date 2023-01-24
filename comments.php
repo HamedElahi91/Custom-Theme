@@ -6,75 +6,11 @@
                 <div class="comments">
                     <h2 class="comments-title"> نظرات</h2>
                     <ul>
-                        <li class="comment ">
-                            <article class="comment-body">
-                                <footer class="comment-meta">
-                                    <div class="comment-author">
-                                        <img alt="" src="assets/img/team/t-1.jpg" class="">
-                                        <b class="fn">
-                                            <a href="#" rel="external nofollow" class="url">
-                                                کریس امز
-                                            </a>
-                                        </b>
-                                        <span class="says">گفته:</span>
-                                    </div>
-                                    <!-- .comment-author -->
-
-                                    <div class="comment-metadata">
-                                        <a href="#">
-                                            <time datetime="2018-09-02T12:17:07+00:00">
-                                                1398 فروردین
-                                            </time>
-                                        </a>
-                                    </div><!-- .comment-metadata -->
-
-                                </footer><!-- .comment-meta -->
-
-                                <div class="comment-content">
-                                    <p>سلام، این یک دیدگاه میباشد.<br>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.<br>
-                                        زندگی را زیبا کنید <a href="#">مدرن</a>.</p>
-                                </div><!-- .comment-content -->
-
-                                <div class="reply">
-                                    <a rel="nofollow" class="comment-reply-link" href="#" >پاسخ</a>
-                                </div>
-                            </article><!-- .comment-body -->
-                            <ul class="children">
-                                <li class="comment ">
-                                    <article class="comment-body">
-                                        <footer class="comment-meta">
-                                            <div class="comment-author ">
-                                                <img alt="" src="assets/img/team/t-2.jpg" class="" >
-                                                <b class="fn">
-                                                    <a href="#" rel="external nofollow" class="url">جانس برونس</a>
-                                                </b>
-                                                <span class="says">گفته:</span>
-                                            </div><!-- .comment-author -->
-
-                                            <div class="comment-metadata">
-                                                <a href="#">
-                                                    <time datetime="2018-10-16T13:13:25+00:00">
-                                                        1398 فروردین
-                                                    </time>
-                                                </a>
-                                            </div><!-- .comment-metadata -->
-
-                                        </footer><!-- .comment-meta -->
-
-                                        <div class="comment-content">
-                                            <p>سلام، این یک دیدگاه میباشد.<br>
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.<br>
-                                               زندگی را دوست داشته باشید</p>
-                                        </div><!-- .comment-content -->
-
-                                        <div class="reply">
-                                            <a rel="nofollow" class="comment-reply-link" href="#">پاسخ</a>
-                                        </div>
-                                    </article><!-- .comment-body -->
-                                </li><!-- #comment-## -->
-                            </ul><!-- .children -->
-                        </li><!-- #comment-## -->
+                    <?php wp_list_comments([
+                        'type' => 'comment',
+                        'style' => 'ul',
+                        'collback' => 'ct_comment_function'
+                    ], get_comments(['post_id' => get_the_ID()])); ?>
                     </ul>
                 </div>
                 <!--comments area end-->
@@ -84,35 +20,35 @@
                     <h3 class="comment-reply-title mb-lg-5 mb-4">
                         پیام بگذارید
                     </h3>
-                    <form role="form" class="comment-form">
-                        <div class="row">
-                            <div class=" col-md-4">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="نام*" required="">
-                                </div>
-                            </div>
-                            <div class=" col-md-4">
+                    <?php
+                    comment_form([
+                        'fields' => [
+                            'author' => '<div class="row"><div class=" col-md-4">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="author" placeholder="نام*" required="">
+                                            </div>
+                                        </div>',
+                        'email' => '<div class=" col-md-4">
+                                        <div class="form-group ">
+                                            <input type="email" class="form-control" name="email" placeholder="ایمیل*" required="">
+                                        </div>
+                                    </div></div>',
+                    'url' => '<div class=" col-md-4">
                                 <div class="form-group ">
-                                    <input type="email" class="form-control" placeholder="ایمیل*" required="">
+                                    <input type="text" class="form-control" name="url" placeholder="وب سایت" >
                                 </div>
-                            </div>
-                            <div class=" col-md-4">
-                                <div class="form-group ">
-                                    <input type="text" class="form-control" placeholder="وب سایت" required="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="controls">
-                                <textarea id="message" rows="5" placeholder="نظر*" class="form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <p class="text-muted">آدرس ایمیل شما منتشر نخواهد شد. فیلدهای مورد نیاز علامت گذاری شده اند *</p>
-                        <div class="text-center mt-md-5">
-                            <button type="submit" class="btn btn-theme">ارسال</button>
-                        </div>
-                    </form>
+                             </div>'
+                        ],
+                        'comment_field' => '<div class="form-group">
+                                                <div class="controls">
+                                                    <textarea id="message" name="comment" rows="5" placeholder="نظر*" class="form-control" required=""></textarea>
+                                                </div>
+                                            </div>',
+                        'title_reply' => '',
+                        'submit_field'         => '<div class="text-center mt-md-5">%1$s %2$s</div>',
+                        'submit_button'        => '<button type="submit" class="btn btn-theme">ارسال</button>'
+                    ]);
+                    ?>
                 </div>
                 <!--comment form end-->
             </div>
