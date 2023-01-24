@@ -1,0 +1,44 @@
+.menu-menutop-container {
+    float: left;
+    width: 70%;
+}
+
+#menu-menutop {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#menu-menutop li {
+    list-style: none;
+}
+
+#menu-menutop>li {
+    float: right;
+    position: relative;
+}
+
+#menu-menutop a {
+    padding: 10px;
+}
+
+#menu-menutop li>ul {
+    display: none;
+    position: absolute;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    top: 25px;
+    right: 10px;
+}
+
+#menu-menutop li:hover>ul {
+    display: block;
+}
+
+#menu-menutop li ul li {
+    padding: 10px;
+    text-align: center;
+}

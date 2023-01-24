@@ -2,25 +2,7 @@
 <?php if (is_active_sidebar('ct-blog-sidebar')) : ?>
         <?php dynamic_sidebar('ct-blog-sidebar'); ?>
     <?php endif; ?>
-                <div class="blog-widget mb-4">
-                    <!-- <form>
-                        <div class="form-group">
-                            <div class="icon-field">
-                                <i class="vl-search"></i>
-                                <input type="text" name="s" class="form-control" placeholder="جستجو">
-                            </div>
-                        </div>
-                    </form> -->
-                </div>
-                <div class="blog-widget mb-4">
-                    <h6 class="mb-4">دسته بندی ها</h6>
-                    <div class="list-group list-group-right-arrow">
-                        <a href="#" class="list-group-item">هنر (20)</a>
-                        <a href="#" class="list-group-item">غذا (32)</a>
-                        <a href="#" class="list-group-item">زندگی خوب (17)</a>
-                        <a href="#" class="list-group-item">سفر کردن (02)</a>
-                    </div>
-                </div>
+                
                 <div class="blog-widget mb-4">
                     <div class="card border-0 mb-md-0 mb-3">
                         <img class="card-img-top" src="<?php echo CT_ASSETS_URL; ?>/img/blog/blog-author.jpg" alt="card image" />

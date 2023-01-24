@@ -23,6 +23,8 @@ function CT_setup(){
       'before_title'  => ' <h6 class="mb-4">',
       'after_title'   => '</h6>'
   ]);
+  
+  register_nav_menu('top', 'top menu');
 
 }
 add_filter('show_admin_bar', '__return_false');

@@ -12,16 +12,14 @@ class CT_Search_Widget extends WP_Widget{
             echo $args['before_title'];
             echo $args['after_title'];
             ?>
-            
-                    <form>
-                        <div class="form-group">
-                            <div class="icon-field">
-                                <i class="vl-search"></i>
-                                <input type="text" name="s" class="form-control" placeholder="جستجو">
-                            </div>
+            <form>
+                  <div class="form-group">
+                        <div class="icon-field">
+                              <i class="vl-search"></i>
+                              <input type="text" name="s" class="form-control" placeholder="جستجو">
                         </div>
-                    </form>
-             
+                  </div>
+            </form>
             <?php
             
             echo $args['after_widget'];

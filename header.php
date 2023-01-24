@@ -28,6 +28,7 @@
 
     <!--custom styles-->
     <link href="<?php echo CT_ASSETS_URL; ?>/css/main.css" rel="stylesheet">
+    <link href="<?php echo CT_ASSETS_URL; ?>/css/custom.css" rel="stylesheet">
 
     <!--[if (gt IE 9) |!(IE)]><!-->
     <!--<link rel="stylesheet" href="assets/vendor/custom-nav/css/effects/fade-menu.css"/>-->
@@ -45,4 +46,4 @@
     </script>
 </head>
 
-<body class="bg-gray">
+<body <?php body_class('bg-gray'); ?> >
