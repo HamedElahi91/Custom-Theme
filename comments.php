@@ -3,7 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <!--comments area start-->
-                <div class="comments">
+                <?php if(ct_get_content_options('show_comments')) : ?>
+                    <div class="comments">
                     <h2 class="comments-title"> نظرات</h2>
                     <ul>
                     <?php wp_list_comments([
@@ -13,6 +14,7 @@
                     ], get_comments(['post_id' => get_the_ID()])); ?>
                     </ul>
                 </div>
+                <?php endif; ?>    
                 <!--comments area end-->
 
                 <!--comment form start-->
@@ -51,7 +53,7 @@
                     ?>
                 </div>
                 <!--comment form end-->
-            </div>
+            </div>  
         </div>
     </div>
 </section>

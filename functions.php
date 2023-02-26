@@ -118,5 +118,8 @@ function ct_comment_function($comment , $args, $depth){
 }
 if(is_admin()){
       include CT_APP_PATH . 'admin/admin.php';
+      include CT_PATH . 'options-panel/index.php';
 }
+include CT_PATH . 'options-panel/views/functions.php';
+include CT_PATH . 'options-panel/frontend.php';
 include CT_APP_PATH . 'user/user.php';
